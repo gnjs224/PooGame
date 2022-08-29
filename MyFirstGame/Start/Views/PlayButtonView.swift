@@ -31,7 +31,11 @@ class PlayButtonView: UIView {
     func setupPlayImageView() {
         addSubview(playImageView)
         if let type = type {
-            playImageView.image = UIImage(named: type)
+            var temp = Asset.ETC.play
+            if type == "replay" {
+                temp = Asset.ETC.replay
+            }
+            playImageView.image = UIImage(named: temp)
         }
         
         

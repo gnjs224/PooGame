@@ -13,15 +13,17 @@ class StartViewController: UIViewController {
     let playButtonView = PlayButtonView(type: "play")
     let scoreTitleLabel = UILabel()
     let scoreLabel = UILabel()
+    let characterImageView = UIImageView()
+
     override func viewDidLoad() {
+        UserDefaultManager.shared.settings = ["background": "background1", "character": "character1"]
         super.viewDidLoad()
-        
         drawFrame()
         setupPlayButtonView()
         setupTitleLabel()
         setupScoreTitleLabel()
         setupScoreLabel()
-        setupCharacter()
+        setupCharacterImageView()
     }
     
     
@@ -74,8 +76,14 @@ class StartViewController: UIViewController {
             $0.top.equalTo(scoreTitleLabel.snp.bottom).offset(5)
         }
     }
-    func setupCharacter() {
+    func setupCharacterImageView() {
+        view.addSubview(characterImageView)
         
+        characterImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", d: "right", type: "stop", depth: ""))?.setSizeImage(height: 40, width: 40)
+        characterImageView.snp.makeConstraints {
+            $0.top.equalTo(scoreLabel.snp.bottom)
+            $0.centerX.equalToSuperview()
+        }
     }
     
     
