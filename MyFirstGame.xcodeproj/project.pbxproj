@@ -14,7 +14,6 @@
 		78381FF128B62EE000998B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78381FEF28B62EE000998B9D /* LaunchScreen.storyboard */; };
 		789B905A28B9C80000280D93 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789B905928B9C80000280D93 /* Poo.swift */; };
 		789B907928BBD9E800280D93 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 789B907828BBD9E800280D93 /* SnapKit */; };
-		789B907B28BBD9E800280D93 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 789B907A28BBD9E800280D93 /* SnapKit-Dynamic */; };
 		78D6439F28B6FF0A0016A8E4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6439E28B6FF0A0016A8E4 /* Image.swift */; };
 		78D643A128B706470016A8E4 /* NeoDunggeunmoPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78D643A028B706470016A8E4 /* NeoDunggeunmoPro-Regular.ttf */; };
 		78D643A528B706E00016A8E4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D643A428B706E00016A8E4 /* UserDefaultManager.swift */; };
@@ -25,6 +24,9 @@
 		78D643B428B7488A0016A8E4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D643B328B7488A0016A8E4 /* PlayViewController.swift */; };
 		78D643BB28B75BE30016A8E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D643BA28B75BE30016A8E4 /* ViewController.swift */; };
 		78D643C328B7C39B0016A8E4 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D643C228B7C39B0016A8E4 /* EndViewController.swift */; };
+		78D906C928BC90640025BB24 /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D906C828BC90640025BB24 /* ExitViewController.swift */; };
+		78D906CB28BC90710025BB24 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D906CA28BC90710025BB24 /* SettingViewController.swift */; };
+		78D906D028BCD22C0025BB24 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D906CF28BCD22C0025BB24 /* Asset.swift */; };
 		CCDFB322DF9A4BB80EE2E815 /* Pods_MyFirstGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E605EC11C57118F14E0C9A /* Pods_MyFirstGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 		78D643B328B7488A0016A8E4 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		78D643BA28B75BE30016A8E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78D643C228B7C39B0016A8E4 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		78D906C828BC90640025BB24 /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
+		78D906CA28BC90710025BB24 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		78D906CF28BCD22C0025BB24 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		838ABA74B0F99B5409E5FFE7 /* Pods-MyFirstGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFirstGame.debug.xcconfig"; path = "Target Support Files/Pods-MyFirstGame/Pods-MyFirstGame.debug.xcconfig"; sourceTree = "<group>"; };
 		D5E605EC11C57118F14E0C9A /* Pods_MyFirstGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFirstGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,7 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				789B907928BBD9E800280D93 /* SnapKit in Frameworks */,
-				789B907B28BBD9E800280D93 /* SnapKit-Dynamic in Frameworks */,
 				CCDFB322DF9A4BB80EE2E815 /* Pods_MyFirstGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +76,6 @@
 				838ABA74B0F99B5409E5FFE7 /* Pods-MyFirstGame.debug.xcconfig */,
 				39BE9AF601B01F1D9DC367FF /* Pods-MyFirstGame.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,8 +108,11 @@
 		78381FE328B62EDF00998B9D /* MyFirstGame */ = {
 			isa = PBXGroup;
 			children = (
+				78D906D728BD11490025BB24 /* Model */,
+				78D906C728BC901C0025BB24 /* Header */,
 				78381FE428B62EDF00998B9D /* AppDelegate.swift */,
 				78381FE628B62EDF00998B9D /* SceneDelegate.swift */,
+				78D906CF28BCD22C0025BB24 /* Asset.swift */,
 				78D643A628B7150E0016A8E4 /* Start */,
 				78D643B128B748730016A8E4 /* Play */,
 				78D643B228B7487B0016A8E4 /* End */,
@@ -177,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				78D643B328B7488A0016A8E4 /* PlayViewController.swift */,
-				789B905928B9C80000280D93 /* Poo.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -188,6 +193,39 @@
 				78D643C228B7C39B0016A8E4 /* EndViewController.swift */,
 			);
 			path = End;
+			sourceTree = "<group>";
+		};
+		78D906C728BC901C0025BB24 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				78D906CD28BC907F0025BB24 /* Setting */,
+				78D906CC28BC90750025BB24 /* Exit */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		78D906CC28BC90750025BB24 /* Exit */ = {
+			isa = PBXGroup;
+			children = (
+				78D906C828BC90640025BB24 /* ExitViewController.swift */,
+			);
+			path = Exit;
+			sourceTree = "<group>";
+		};
+		78D906CD28BC907F0025BB24 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				78D906CA28BC90710025BB24 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		78D906D728BD11490025BB24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				789B905928B9C80000280D93 /* Poo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +239,6 @@
 				78381FDD28B62EDF00998B9D /* Sources */,
 				78381FDE28B62EDF00998B9D /* Frameworks */,
 				78381FDF28B62EDF00998B9D /* Resources */,
-				16C600FFE2AAAC4D79DCB57F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +247,6 @@
 			name = MyFirstGame;
 			packageProductDependencies = (
 				789B907828BBD9E800280D93 /* SnapKit */,
-				789B907A28BBD9E800280D93 /* SnapKit-Dynamic */,
 			);
 			productName = MyFirstGame;
 			productReference = 78381FE128B62EDF00998B9D /* MyFirstGame.app */;
@@ -241,7 +277,7 @@
 			);
 			mainGroup = 78381FD828B62EDF00998B9D;
 			packageReferences = (
-				789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 78381FE228B62EDF00998B9D /* Products */;
 			projectDirPath = "";
@@ -266,23 +302,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16C600FFE2AAAC4D79DCB57F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyFirstGame/Pods-MyFirstGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyFirstGame/Pods-MyFirstGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFirstGame/Pods-MyFirstGame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E5AE6772DD0C03AAED3FE023 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,11 +336,14 @@
 				789B905A28B9C80000280D93 /* Poo.swift in Sources */,
 				78381FE928B62EDF00998B9D /* StartViewController.swift in Sources */,
 				78D643AB28B716690016A8E4 /* Font.swift in Sources */,
+				78D906CB28BC90710025BB24 /* SettingViewController.swift in Sources */,
+				78D906D028BCD22C0025BB24 /* Asset.swift in Sources */,
 				78D6439F28B6FF0A0016A8E4 /* Image.swift in Sources */,
 				78381FE528B62EDF00998B9D /* AppDelegate.swift in Sources */,
 				78D643B028B730240016A8E4 /* View.swift in Sources */,
 				78D643BB28B75BE30016A8E4 /* ViewController.swift in Sources */,
 				78D643B428B7488A0016A8E4 /* PlayViewController.swift in Sources */,
+				78D906C928BC90640025BB24 /* ExitViewController.swift in Sources */,
 				78D643AD28B716790016A8E4 /* Color.swift in Sources */,
 				78381FE728B62EDF00998B9D /* SceneDelegate.swift in Sources */,
 				78D643A528B706E00016A8E4 /* UserDefaultManager.swift in Sources */,
@@ -536,7 +558,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -549,13 +571,8 @@
 /* Begin XCSwiftPackageProductDependency section */
 		789B907828BBD9E800280D93 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = 789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		789B907A28BBD9E800280D93 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 789B907728BBD9E800280D93 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
