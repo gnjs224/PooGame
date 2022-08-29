@@ -52,7 +52,7 @@ class EndViewController: UIViewController {
     func setupScoreImageView() {
         view.addSubview(scoreImageView)
         
-        scoreImageView.image = UIImage(named: "score")?.setSizeImage(height: UIScreen.main.bounds.width * 0.4, width: UIScreen.main.bounds.width * 0.4)
+        scoreImageView.image = UIImage(named: Asset.ETC.score)?.setSizeImage(height: UIScreen.main.bounds.width * 0.4, width: UIScreen.main.bounds.width * 0.4)
         scoreImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(scoreLabel.snp.bottom).offset(40)
