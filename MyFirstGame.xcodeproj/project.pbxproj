@@ -12,6 +12,7 @@
 		78381FE928B62EDF00998B9D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78381FE828B62EDF00998B9D /* StartViewController.swift */; };
 		78381FEE28B62EE000998B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78381FED28B62EE000998B9D /* Assets.xcassets */; };
 		78381FF128B62EE000998B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78381FEF28B62EE000998B9D /* LaunchScreen.storyboard */; };
+		78871A7828BE60A800F42057 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A7728BE60A800F42057 /* SettingViewModel.swift */; };
 		789B905A28B9C80000280D93 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789B905928B9C80000280D93 /* Poo.swift */; };
 		789B907928BBD9E800280D93 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 789B907828BBD9E800280D93 /* SnapKit */; };
 		78C9772D28BD96340056EF7C /* BGMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C9772C28BD96340056EF7C /* BGMManager.swift */; };
@@ -42,6 +43,7 @@
 		78381FED28B62EE000998B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78381FF028B62EE000998B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78381FF228B62EE000998B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78871A7728BE60A800F42057 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		789B905928B9C80000280D93 /* Poo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poo.swift; sourceTree = "<group>"; };
 		78C9772C28BD96340056EF7C /* BGMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMManager.swift; sourceTree = "<group>"; };
 		78C9774F28BDC2AD0056EF7C /* Start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Start.mp3; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		78D906CD28BC907F0025BB24 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				78871A7728BE60A800F42057 /* SettingViewModel.swift */,
 				78D906CA28BC90710025BB24 /* SettingViewController.swift */,
 				78C9775528BE05690056EF7C /* Views */,
 			);
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78871A7828BE60A800F42057 /* SettingViewModel.swift in Sources */,
 				78D643C328B7C39B0016A8E4 /* EndViewController.swift in Sources */,
 				78D643A928B7153F0016A8E4 /* PlayButtonView.swift in Sources */,
 				789B905A28B9C80000280D93 /* Poo.swift in Sources */,
