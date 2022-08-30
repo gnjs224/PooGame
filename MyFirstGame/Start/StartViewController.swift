@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
-        UserDefaultManager.shared.settings = ["background": "background2", "character": "character1"]
+        UserDefaultManager.shared.settings = ["background": "background2", "avoider": "avoider1"]
         super.viewDidLoad()
         drawFrame()
         setupPlayButtonView()
@@ -82,7 +82,7 @@ class StartViewController: UIViewController {
     func setupAvoiderImageView() {
         view.addSubview(avoiderImageView)
         
-        avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", state: "right_stop"))
+        avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: "right_stop"))
         
         
     }

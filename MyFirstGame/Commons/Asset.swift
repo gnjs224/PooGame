@@ -12,6 +12,8 @@ struct Asset {
     struct Background {
         private static let `default`: String = "background"
         
+        static let settingBackground = "\(`default`)/settingBackground"
+        
         static let background0 = "\(`default`)/background0"
         static let background1 = "\(`default`)/background1"
         static let background2 = "\(`default`)/background2"
@@ -21,14 +23,19 @@ struct Asset {
         static func getImage(n: String) -> String {
             return "\(`default`)/\(n)"
         }
+        static func getImage(n: Int) -> String {
+            return "\(`default`)/background\(n)"
+        }
     }
     
     struct Avoider {
         private static let `default`: String = "avoider"
-        
         /// 현재 Avoider 이미지 뷰
         static func getImage(n: String, state: String, depth: String = "") -> String{
-            return "\(Asset.Avoider.`default`)/\(n)_\(state)\(depth)-removebg-preview"
+            return "\(Asset.Avoider.`default`)/\(n)_\(state)\(depth)"
+        }
+        static func getImage(n: Int) -> String{
+            return "\(Asset.Avoider.`default`)/avoider\(n)_right_stop"
         }
     }
     
@@ -52,6 +59,8 @@ struct Asset {
         static let poo = "\(`default`)/poo"
         static let replay = "\(`default`)/replay"
         static let score = "\(`default`)/score"
+        static let right = "\(`default`)/right"
+        static let left = "\(`default`)/left"
     }
     
 }

@@ -64,12 +64,12 @@ var moveState = MoveState.leftDie {
                 while true {
                     if self.moveState.isStop() || !self.moveState.isPlaying() {
                         DispatchQueue.main.async {
-                            self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", state: self.moveState.rawValue))
+                            self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: self.moveState.rawValue))
                         }
                         break
                     }
                     DispatchQueue.main.async {
-                        self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", state: newValue.rawValue, depth: "\(i % 12)"))
+                        self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: newValue.rawValue, depth: "\(i % 12)"))
                         i += 1
                     }
                     usleep(self.avoiderImageChangeSpeed)
@@ -78,7 +78,7 @@ var moveState = MoveState.leftDie {
             }
         } else {
             DispatchQueue.main.async {
-                self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", state: self.moveState.rawValue))
+                self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: self.moveState.rawValue))
             }
         }
         
@@ -104,11 +104,11 @@ func progress(){
         }
     }
     
-    let characterX = avoiderImageView.center.x
-    let characterY = view.safeAreaLayoutGuide.layoutFrame.maxY - 30
-    let characterSize = (avoiderImageView.frame.width, avoiderImageView.frame.height)
-    if characterX + d > 0 && characterX + d < UIScreen.main.bounds.width {
-        avoiderImageView.center = CGPoint(x: characterX + d, y: characterY)
+    let avoiderX = avoiderImageView.center.x
+    let avoiderY = view.safeAreaLayoutGuide.layoutFrame.maxY - 30
+    let avoiderSize = (avoiderImageView.frame.width, avoiderImageView.frame.height)
+    if avoiderX + d > 0 && avoiderX + d < UIScreen.main.bounds.width {
+        avoiderImageView.center = CGPoint(x: avoiderX + d, y: avoiderY)
         
     }
     
@@ -121,7 +121,7 @@ func progress(){
         DispatchQueue.global().async {
             while self.moveState.isPlaying() {
                 p.y += p.speed
-                if p.y - 5 > characterY {
+                if p.y - 5 > avoiderY {
                     DispatchQueue.main.async {
                         UIView.animate(withDuration: 0.4) {
                             p.pooImageView.alpha = 0
@@ -132,13 +132,13 @@ func progress(){
                     }
                     break
                 }
-                if characterY - characterSize.1 / 2 < p.y + p.height / 2 - 5 {
+                if avoiderY - avoiderSize.1 / 2 < p.y + p.height / 2 - 10 {
                     DispatchQueue.main.async {
-                        let pooLeft = p.x - p.width / 2 + 5
-                        let pooRight = p.x + p.width / 2 - 5
-                        let characterLeft = self.avoiderImageView.frame.minX
-                        let characterRight = self.avoiderImageView.frame.maxX
-                        if characterLeft < pooLeft && pooLeft < characterRight || characterLeft < pooRight && pooRight < characterRight {
+                        let pooLeft = p.x - p.width / 2 + 10
+                        let pooRight = p.x + p.width / 2 - 10
+                        let avoiderLeft = self.avoiderImageView.frame.minX
+                        let avoiderRight = self.avoiderImageView.frame.maxX
+                        if avoiderLeft < pooLeft && pooLeft < avoiderRight || avoiderLeft < pooRight && pooRight < avoiderRight {
                             self.gameOver()
                         }
                     }
@@ -226,29 +226,31 @@ func setupAvoiderImageView(){
 func setupLeftMoveButton(){
     view.addSubview(leftMoveButton)
     
-    leftMoveButton.setImage(UIImage(named: Asset.ETC.move)?.setSizeImage(height: moveButtonSize, width: moveButtonSize), for: .normal)
+    leftMoveButton.setImage(UIImage(named: Asset.ETC.left)?.setSizeImage(height: moveButtonSize, width: moveButtonSize), for: .normal)
     leftMoveButton.snp.makeConstraints {
         $0.centerY.equalToSuperview().offset(150)
         $0.leading.equalToSuperview().inset(20)
     }
-    leftMoveButton.addTarget(self, action: #selector(moveCharacter(_:)), for: .touchDown)
-    leftMoveButton.addTarget(self, action: #selector(stopCharacter(_:)), for: .touchUpInside)
-    leftMoveButton.addTarget(self, action: #selector(stopCharacter(_:)), for: .touchUpOutside)
+    leftMoveButton.addTarget(self, action: #selector(moveAvoider(_:)), for: .touchDown)
+    leftMoveButton.addTarget(self, action: #selector(stopAvoider(_:)), for: .touchUpInside)
+    leftMoveButton.addTarget(self, action: #selector(stopAvoider(_:)), for: .touchUpOutside)
     
 }
 
 
 func setupRightMoveButton(){
     view.addSubview(rightMoveButton)
-    rightMoveButton.setImage(UIImage(named: Asset.ETC.move)?.setSizeImage(height: moveButtonSize, width: moveButtonSize), for: .normal)
-    rightMoveButton.transform = .init(rotationAngle: CGFloat.pi)
+    
+    rightMoveButton.setImage(UIImage(named: Asset.ETC.right)?.setSizeImage(height: moveButtonSize, width: moveButtonSize), for: .normal)
+//    rightMoveButton.transform = .init(rotationAngle: CGFloat.pi)
+    
     rightMoveButton.snp.makeConstraints {
         $0.centerY.equalToSuperview().offset(150)
         $0.trailing.equalToSuperview().inset(20)
     }
-    rightMoveButton.addTarget(self, action: #selector(moveCharacter(_:)), for: .touchDown)
-    rightMoveButton.addTarget(self, action: #selector(stopCharacter(_:)), for: .touchUpInside)
-    rightMoveButton.addTarget(self, action: #selector(stopCharacter(_:)), for: .touchUpOutside)
+    rightMoveButton.addTarget(self, action: #selector(moveAvoider(_:)), for: .touchDown)
+    rightMoveButton.addTarget(self, action: #selector(stopAvoider(_:)), for: .touchUpInside)
+    rightMoveButton.addTarget(self, action: #selector(stopAvoider(_:)), for: .touchUpOutside)
 }
 func setupBottomImageView(){
     view.addSubview(bottomImageView)
@@ -262,7 +264,7 @@ func setupBottomImageView(){
     }
 }
 @objc
-func moveCharacter(_ sender: UIButton){
+func moveAvoider(_ sender: UIButton){
     if sender == rightMoveButton {
         moveState = MoveState.rightRun
     } else {
@@ -270,7 +272,7 @@ func moveCharacter(_ sender: UIButton){
     }
 }
 @objc
-func stopCharacter(_ sender: UIButton){
+func stopAvoider(_ sender: UIButton){
     if moveState.isRunning() {
         moveState = moveState.getDirection() == "left" ? MoveState.leftStop : MoveState.rightStop
     }
