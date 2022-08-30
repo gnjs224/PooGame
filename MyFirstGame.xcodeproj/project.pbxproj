@@ -100,22 +100,34 @@
 		78381FE328B62EDF00998B9D /* MyFirstGame */ = {
 			isa = PBXGroup;
 			children = (
-				78D643A328B706BA0016A8E4 /* SDK */,
-				78C9773A28BD9E750056EF7C /* Commons */,
-				78D906D728BD11490025BB24 /* Model */,
-				78D906C728BC901C0025BB24 /* Header */,
 				78381FE428B62EDF00998B9D /* AppDelegate.swift */,
 				78381FE628B62EDF00998B9D /* SceneDelegate.swift */,
+				78C9773A28BD9E750056EF7C /* Commons */,
+				78D906C728BC901C0025BB24 /* Header */,
+				78871A7928BE699600F42057 /* Alert */,
 				78D643A628B7150E0016A8E4 /* Start */,
 				78D643B128B748730016A8E4 /* Game */,
 				78D643B228B7487B0016A8E4 /* End */,
-				78D643A228B706AF0016A8E4 /* Fonts */,
-				78D6439D28B6FF000016A8E4 /* Extensions */,
-				78381FED28B62EE000998B9D /* Assets.xcassets */,
 				78381FEF28B62EE000998B9D /* LaunchScreen.storyboard */,
 				78381FF228B62EE000998B9D /* Info.plist */,
 			);
 			path = MyFirstGame;
+			sourceTree = "<group>";
+		};
+		78871A7928BE699600F42057 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		78871A7A28BE6A0100F42057 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				78D906CF28BCD22C0025BB24 /* Asset.swift */,
+				78381FED28B62EE000998B9D /* Assets.xcassets */,
+			);
+			path = Asset;
 			sourceTree = "<group>";
 		};
 		78C9773628BD9E5F0056EF7C /* BGM */ = {
@@ -124,6 +136,7 @@
 				78C9775028BDC2AD0056EF7C /* End.mp3 */,
 				78C9775128BDC2AD0056EF7C /* Game.mp3 */,
 				78C9774F28BDC2AD0056EF7C /* Start.mp3 */,
+				78C9772C28BD96340056EF7C /* BGMManager.swift */,
 			);
 			path = BGM;
 			sourceTree = "<group>";
@@ -131,9 +144,12 @@
 		78C9773A28BD9E750056EF7C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				78D906CF28BCD22C0025BB24 /* Asset.swift */,
-				78C9772C28BD96340056EF7C /* BGMManager.swift */,
 				78C9773628BD9E5F0056EF7C /* BGM */,
+				78D906D728BD11490025BB24 /* Model */,
+				78871A7A28BE6A0100F42057 /* Asset */,
+				78D643A228B706AF0016A8E4 /* Fonts */,
+				78D6439D28B6FF000016A8E4 /* Extensions */,
+				78D643A428B706E00016A8E4 /* UserDefaultManager.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -163,14 +179,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		78D643A328B706BA0016A8E4 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				78D643AE28B716F50016A8E4 /* Commons */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
 		78D643A628B7150E0016A8E4 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +194,6 @@
 				78D643A828B7153F0016A8E4 /* PlayButtonView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		78D643AE28B716F50016A8E4 /* Commons */ = {
-			isa = PBXGroup;
-			children = (
-				78D643A428B706E00016A8E4 /* UserDefaultManager.swift */,
-			);
-			path = Commons;
 			sourceTree = "<group>";
 		};
 		78D643B128B748730016A8E4 /* Game */ = {
