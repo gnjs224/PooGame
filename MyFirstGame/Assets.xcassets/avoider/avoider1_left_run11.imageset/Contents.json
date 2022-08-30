@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "setting-1.png",
+      "filename" : "avoider1_left_run11.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "setting.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "setting-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

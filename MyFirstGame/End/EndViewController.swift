@@ -13,10 +13,11 @@ class EndViewController: UIViewController {
     let scoreLabel = UILabel()
     let scoreImageView = UIImageView()
     let replayButtonView = PlayButtonView(type: "replay")
-    
+    var avoiderImageView = UIImageView()
     var score = 0
     
     override func viewDidLoad() {
+        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
         super.viewDidLoad()
         drawFrame()
         if score > UserDefaultManager.shared.maxScore {
@@ -26,11 +27,14 @@ class EndViewController: UIViewController {
         setupScoreLabel()
         setupScoreImageView()
         setupReplayButtonView()
+        setupAvoiderImageView()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        BGMManager.shared.playMusic(self)
     }
     func setupScoreTitleLabel() {
         view.addSubview(scoreTitleLabel)
-        print("asd")
         scoreTitleLabel.text = "SCORE"
         scoreTitleLabel.font = UIFont.customFont(fontSize: UserDefaultManager.shared.commonFontSize, type: .둥근모)
         scoreTitleLabel.snp.makeConstraints {
@@ -58,6 +62,12 @@ class EndViewController: UIViewController {
             $0.top.equalTo(scoreLabel.snp.bottom).offset(40)
         }
     }
+    func setupAvoiderImageView() {
+        view.addSubview(avoiderImageView)
+        
+        avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: "right_stop"))
+        
+    }
     func setupReplayButtonView() {
         view.addSubview(replayButtonView)
         
@@ -74,7 +84,8 @@ class EndViewController: UIViewController {
     
     @objc
     func touchUpReplayButtonView() {
-        // TODO: - 화면전환
+        self.navigationController?.popToRootViewController(animated: false)
+        self.navigationController?.pushViewController(GameViewController(), animated: false)
     }
 
 }

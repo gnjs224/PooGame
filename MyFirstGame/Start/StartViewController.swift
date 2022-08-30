@@ -13,19 +13,22 @@ class StartViewController: UIViewController {
     let playButtonView = PlayButtonView(type: "play")
     let scoreTitleLabel = UILabel()
     let scoreLabel = UILabel()
-    let characterImageView = UIImageView()
-
+    var avoiderImageView = UIImageView()
+    // MARK: - Life Cycle
     override func viewDidLoad() {
-        UserDefaultManager.shared.settings = ["background": "background1", "character": "character1"]
+        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
+        UserDefaultManager.shared.settings = ["background": "background2", "avoider": "avoider1"]
         super.viewDidLoad()
         drawFrame()
         setupPlayButtonView()
         setupTitleLabel()
         setupScoreTitleLabel()
         setupScoreLabel()
-        setupCharacterImageView()
+        setupAvoiderImageView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        BGMManager.shared.playMusic(self)
+    }
     
     func setupTitleLabel() {
         view.addSubview(titleLabel)
@@ -56,7 +59,7 @@ class StartViewController: UIViewController {
     @objc
     func touchUpPlayButtonView(){
         // TODO: - 화면전환
-        navigationController?.pushViewController(PlayViewController(), animated: false)
+        navigationController?.pushViewController(GameViewController(), animated: false)
     }
     func setupScoreTitleLabel() {
         view.addSubview(scoreTitleLabel)
@@ -76,16 +79,15 @@ class StartViewController: UIViewController {
             $0.top.equalTo(scoreTitleLabel.snp.bottom).offset(5)
         }
     }
-    func setupCharacterImageView() {
-        view.addSubview(characterImageView)
+    func setupAvoiderImageView() {
+        view.addSubview(avoiderImageView)
         
-        characterImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", d: "right", type: "stop", depth: ""))?.setSizeImage(height: 40, width: 40)
-        characterImageView.snp.makeConstraints {
-            $0.top.equalTo(scoreLabel.snp.bottom)
-            $0.centerX.equalToSuperview()
-        }
+        avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["avoider"] ?? "avoider0", state: "right_stop"))
+        
+        
     }
-    
-    
 }
+
+
+
 
