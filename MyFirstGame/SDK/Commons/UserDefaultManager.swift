@@ -12,7 +12,7 @@ class UserDefaultManager {
     
     private init() { }
     
-    @UserDefault(key: "settings", defaultValue: ["background": "background0", "character": "character0"])
+    @UserDefault(key: "settings", defaultValue: ["background": "background1", "character": "character1"])
     public var settings: Dictionary<String, String>
     
     @UserDefault(key: "commonFontSize", defaultValue: 40)

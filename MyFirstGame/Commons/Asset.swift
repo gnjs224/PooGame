@@ -17,14 +17,18 @@ struct Asset {
         static let background2 = "\(`default`)/background2"
         static let background3 = "\(`default`)/background3"
         static let background4 = "\(`default`)/background4"
+        
+        static func getImage(n: String) -> String {
+            return "\(`default`)/\(n)"
+        }
     }
     
     struct Avoider {
         private static let `default`: String = "avoider"
         
         /// 현재 Avoider 이미지 뷰
-        static func getImage(n: String, d: String, type: String, depth: String = "") -> String{
-            return "\(Asset.Avoider.`default`)/\(n)_\(d)_\(type)\(depth)-removebg-preview"
+        static func getImage(n: String, state: String, depth: String = "") -> String{
+            return "\(Asset.Avoider.`default`)/\(n)_\(state)\(depth)-removebg-preview"
         }
     }
     
@@ -34,8 +38,8 @@ struct Asset {
         
         static let exit = "\(`default`)/exit"
         static let setting = "\(`default`)/setting"
-        static let sound = "\(`default`)/sound"
-
+        static let soundOn = "\(`default`)/soundOn"
+        static let soundOff = "\(`default`)/soundOff"
     }
     
     /// 앱 요소에 관련한 부분
