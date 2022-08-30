@@ -31,12 +31,16 @@ extension UIViewController: AVAudioPlayerDelegate {
     func touchUpExitButton() {
         
         // TODO: - 화면전환
-        print(self)
         if self is GameViewController {
             self.navigationController?.popViewController(animated: false)
         }else if self is EndViewController {
             self.navigationController?.popToRootViewController(animated: false)
+            self.navigationController?.pushViewController(GameViewController(), animated: true)
+            print("asd")
         } else{
+            let vc = AlertViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            present(vc, animated: false)
         }
         
     }
