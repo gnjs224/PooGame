@@ -19,12 +19,9 @@ class SettingView: UIView {
     let avoiderTitleLabel = UILabel()
     let avoiderSelectedNameLabel = UILabel()
     let avoiderSelectedImageView = UIImageView()
-
     let middleLineView = UIView()
-    
     let backgroundLeftButton = UIButton()
     let backgroundRightButton = UIButton()
-    
     let avoiderLeftButton = UIButton()
     let avoiderRightButton = UIButton()
     let viewModel = SettingViewModel()
