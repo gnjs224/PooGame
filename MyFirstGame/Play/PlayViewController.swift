@@ -45,21 +45,18 @@ class PlayViewController: UIViewController {
                     
                     var i = 0
                     while true {
-//                        print(self.isPlaying, self.moveState)
+                        var type:String = "run"
                         if !self.isPlaying {
-                            DispatchQueue.main.async {
-                                self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", d: newValue.rawValue, type: "die"))
-                            }
-
-                            break
+                            type = "die"
                         }
                         if self.moveState == MoveState.stop {
-                            
+                            type = self.moveState.rawValue
+                        }
+                        if type != "run" {
                             DispatchQueue.main.async {
                                 
                                 self.avoiderImageView.image = UIImage(named: Asset.Avoider.getImage(n: UserDefaultManager.shared.settings["character"] ?? "character0", d: newValue.rawValue, type: self.moveState.rawValue))
                             }
-                            
                             break
                         }
                         if self.moveState != newValue {
