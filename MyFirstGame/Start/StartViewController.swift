@@ -16,10 +16,12 @@ class StartViewController: UIViewController {
     var avoiderImageView = UIImageView()
     // MARK: - Life Cycle
     override func viewDidLoad() {
-        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
-        UserDefaultManager.shared.settings = ["background": "background2", "avoider": "avoider1"]
         super.viewDidLoad()
-        drawFrame()
+        
+        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
+        
+        
+        drawFrame(backgroundImage)
         setupPlayButtonView()
         setupTitleLabel()
         setupScoreTitleLabel()
@@ -28,8 +30,11 @@ class StartViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         BGMManager.shared.playMusic(self)
+       
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("didDisapper")
+    }
     func setupTitleLabel() {
         view.addSubview(titleLabel)
         

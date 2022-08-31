@@ -15,18 +15,17 @@ class AlertView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
         backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configure(){
+    func configure(text: String){
         setupAlertLabel()
         setupOkayButton()
         setupCancelButton()
-        alertLabel.text = "Asdasassdasdad"
+        alertLabel.text = text
     }
     func setupAlertLabel() {
         addSubview(alertLabel)

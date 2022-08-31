@@ -12,7 +12,7 @@ class AlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        alertView.configure()
+        alertView.configure(text: "Asda")
         setupAlertView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
