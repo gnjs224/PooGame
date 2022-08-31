@@ -30,6 +30,7 @@ class StartViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         BGMManager.shared.playMusic(self)
+        scoreLabel.text = "\(UserDefaultManager.shared.maxScore)"
        
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -77,7 +78,7 @@ class StartViewController: UIViewController {
     }
     func setupScoreLabel() {
         view.addSubview(scoreLabel)
-        scoreLabel.text = "\(UserDefaultManager.shared.maxScore)"
+        
         scoreLabel.font = UIFont.customFont(fontSize: UserDefaultManager.shared.commonFontSize, type: .둥근모)
         scoreLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()

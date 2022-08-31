@@ -20,9 +20,7 @@ class EndViewController: UIViewController {
         avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
         super.viewDidLoad()
         drawFrame(backgroundImageView)
-        if score > UserDefaultManager.shared.maxScore {
-            UserDefaultManager.shared.maxScore = score
-        }
+        
         setupScoreTitleLabel()
         setupScoreLabel()
         setupScoreImageView()
@@ -32,6 +30,10 @@ class EndViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         BGMManager.shared.playMusic(self)
+        if score > UserDefaultManager.shared.maxScore {
+            UserDefaultManager.shared.maxScore = score
+        }
+        print("asd")
     }
     func setupScoreTitleLabel() {
         view.addSubview(scoreTitleLabel)
