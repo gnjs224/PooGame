@@ -6,10 +6,12 @@
 //
 
 import UIKit
-
+protocol Setting: AnyObject {
+    func updateSetting()
+}
 class SettingViewController: UIViewController {
     let settingView = SettingView()
-    
+    weak var delegate: Setting?
     var backgroundIndex = 0
     var avoiderIndex = 0
     override func viewDidLoad() {
@@ -48,7 +50,11 @@ class SettingViewController: UIViewController {
     @objc
     func touchUpDismissButton() {
         // TODO: - 알러트
+        UserDefaultManager.shared.settings = ["background": "background\(backgroundIndex)" ,"avoider": "avoider\(avoiderIndex)"]
+        delegate?.updateSetting()
+        
         dismiss(animated: false)
+        
     }
     @objc
     func ChangeSetting(_ sender: UIButton) {

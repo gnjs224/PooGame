@@ -32,6 +32,7 @@ class GameViewController: UIViewController {
     }
     
     // MARK: - IBOutlets
+    let backgroundImageView = UIImageView()
     let avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height - 200 , width: 40, height: 40))
     let scoreButton = UIButton()
     let leftMoveButton = UIButton()
@@ -174,7 +175,7 @@ func gameOver() {
 override func viewDidLoad() {
     super.viewDidLoad()
     
-    drawFrame()
+    drawFrame(backgroundImageView)
     setupBottomImageView()
     setupAvoiderImageView()
     setupLeftMoveButton()

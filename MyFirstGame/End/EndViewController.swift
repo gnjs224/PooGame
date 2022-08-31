@@ -8,7 +8,7 @@
 import UIKit
 
 class EndViewController: UIViewController {
-
+    let backgroundImageView = UIImageView()
     let scoreTitleLabel = UILabel()
     let scoreLabel = UILabel()
     let scoreImageView = UIImageView()
@@ -19,7 +19,7 @@ class EndViewController: UIViewController {
     override func viewDidLoad() {
         avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
         super.viewDidLoad()
-        drawFrame()
+        drawFrame(backgroundImageView)
         if score > UserDefaultManager.shared.maxScore {
             UserDefaultManager.shared.maxScore = score
         }
@@ -84,8 +84,11 @@ class EndViewController: UIViewController {
     
     @objc
     func touchUpReplayButtonView() {
-        self.navigationController?.popToRootViewController(animated: false)
+        // TODO: - 화면 전환
         self.navigationController?.pushViewController(GameViewController(), animated: false)
+//
+//        self.navigationController?.popToRootViewController(animated: false)
+//            }
     }
 
 }
