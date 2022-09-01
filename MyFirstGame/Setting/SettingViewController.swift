@@ -6,14 +6,13 @@
 //
 
 import UIKit
-protocol Setting: AnyObject {
-    func updateSetting()
-}
+
 class SettingViewController: UIViewController {
     let settingView = SettingView()
     weak var delegate: Setting?
     var backgroundIndex = 0
     var avoiderIndex = 0
+    var coordinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
         if let existBackground = UserDefaultManager.shared.settings["background"], let existAvoider = UserDefaultManager.shared.settings["avoider"] {

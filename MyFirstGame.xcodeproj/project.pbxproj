@@ -16,6 +16,13 @@
 		78871A7D28BE791000F42057 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A7C28BE791000F42057 /* AlertViewController.swift */; };
 		78871A7F28BE792800F42057 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A7E28BE792800F42057 /* AlertView.swift */; };
 		78871A8128BE7B2E00F42057 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8028BE7B2E00F42057 /* AlertViewModel.swift */; };
+		78871A8628C0230600F42057 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8528C0230600F42057 /* Setting.swift */; };
+		78871A8828C0233B00F42057 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8728C0233B00F42057 /* Coordinator.swift */; };
+		78871A8A28C0237C00F42057 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8928C0237C00F42057 /* AppCoordinator.swift */; };
+		78871A8C28C0255800F42057 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8B28C0255800F42057 /* StartCoordinator.swift */; };
+		78871A8E28C0273200F42057 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8D28C0273200F42057 /* GameCoordinator.swift */; };
+		78871A9028C0278700F42057 /* EndCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A8F28C0278700F42057 /* EndCoordinator.swift */; };
+		78871A9428C0B3E900F42057 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78871A9328C0B3E900F42057 /* SettingCoordinator.swift */; };
 		789B905A28B9C80000280D93 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789B905928B9C80000280D93 /* Poo.swift */; };
 		789B907928BBD9E800280D93 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 789B907828BBD9E800280D93 /* SnapKit */; };
 		78C9772D28BD96340056EF7C /* BGMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C9772C28BD96340056EF7C /* BGMManager.swift */; };
@@ -47,6 +54,13 @@
 		78871A7C28BE791000F42057 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		78871A7E28BE792800F42057 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		78871A8028BE7B2E00F42057 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		78871A8528C0230600F42057 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		78871A8728C0233B00F42057 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		78871A8928C0237C00F42057 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		78871A8B28C0255800F42057 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
+		78871A8D28C0273200F42057 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
+		78871A8F28C0278700F42057 /* EndCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndCoordinator.swift; sourceTree = "<group>"; };
+		78871A9328C0B3E900F42057 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		789B905928B9C80000280D93 /* Poo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poo.swift; sourceTree = "<group>"; };
 		78C9772C28BD96340056EF7C /* BGMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMManager.swift; sourceTree = "<group>"; };
 		78C9774F28BDC2AD0056EF7C /* Start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Start.mp3; sourceTree = "<group>"; };
@@ -104,6 +118,8 @@
 		78381FE328B62EDF00998B9D /* MyFirstGame */ = {
 			isa = PBXGroup;
 			children = (
+				78871A8428C022E500F42057 /* Protocols */,
+				78871A8328C022CD00F42057 /* Coordinators */,
 				78381FE428B62EDF00998B9D /* AppDelegate.swift */,
 				78381FE628B62EDF00998B9D /* SceneDelegate.swift */,
 				78C9773A28BD9E750056EF7C /* Commons */,
@@ -136,6 +152,27 @@
 				78381FED28B62EE000998B9D /* Assets.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		78871A8328C022CD00F42057 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				78871A8928C0237C00F42057 /* AppCoordinator.swift */,
+				78871A8B28C0255800F42057 /* StartCoordinator.swift */,
+				78871A8D28C0273200F42057 /* GameCoordinator.swift */,
+				78871A8F28C0278700F42057 /* EndCoordinator.swift */,
+				78871A9328C0B3E900F42057 /* SettingCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		78871A8428C022E500F42057 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				78871A8528C0230600F42057 /* Setting.swift */,
+				78871A8728C0233B00F42057 /* Coordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		78C9773628BD9E5F0056EF7C /* BGM */ = {
@@ -318,15 +355,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78871A8A28C0237C00F42057 /* AppCoordinator.swift in Sources */,
 				78871A7828BE60A800F42057 /* SettingViewModel.swift in Sources */,
 				78871A7F28BE792800F42057 /* AlertView.swift in Sources */,
 				78D643C328B7C39B0016A8E4 /* EndViewController.swift in Sources */,
+				78871A8628C0230600F42057 /* Setting.swift in Sources */,
 				78D643A928B7153F0016A8E4 /* PlayButtonView.swift in Sources */,
+				78871A8E28C0273200F42057 /* GameCoordinator.swift in Sources */,
+				78871A9428C0B3E900F42057 /* SettingCoordinator.swift in Sources */,
 				789B905A28B9C80000280D93 /* Poo.swift in Sources */,
 				78C9775728BE057D0056EF7C /* SettingView.swift in Sources */,
+				78871A8C28C0255800F42057 /* StartCoordinator.swift in Sources */,
 				78381FE928B62EDF00998B9D /* StartViewController.swift in Sources */,
 				78D643AB28B716690016A8E4 /* Font.swift in Sources */,
 				78D906CB28BC90710025BB24 /* SettingViewController.swift in Sources */,
+				78871A9028C0278700F42057 /* EndCoordinator.swift in Sources */,
 				78D906D028BCD22C0025BB24 /* Asset.swift in Sources */,
 				78D6439F28B6FF0A0016A8E4 /* Image.swift in Sources */,
 				78871A8128BE7B2E00F42057 /* AlertViewModel.swift in Sources */,
@@ -337,6 +380,7 @@
 				78D643B428B7488A0016A8E4 /* GameViewController.swift in Sources */,
 				78381FE728B62EDF00998B9D /* SceneDelegate.swift in Sources */,
 				78D643A528B706E00016A8E4 /* UserDefaultManager.swift in Sources */,
+				78871A8828C0233B00F42057 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

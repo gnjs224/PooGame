@@ -15,9 +15,9 @@ class EndViewController: UIViewController {
     let replayButtonView = PlayButtonView(type: "replay")
     var avoiderImageView = UIImageView()
     var score = 0
-    
+    var coordinator: Coordinator?
     override func viewDidLoad() {
-        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
+        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 20, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
         super.viewDidLoad()
         drawFrame(backgroundImageView)
         
@@ -33,7 +33,6 @@ class EndViewController: UIViewController {
         if score > UserDefaultManager.shared.maxScore {
             UserDefaultManager.shared.maxScore = score
         }
-        print("asd")
     }
     func setupScoreTitleLabel() {
         view.addSubview(scoreTitleLabel)
@@ -87,10 +86,9 @@ class EndViewController: UIViewController {
     @objc
     func touchUpReplayButtonView() {
         // TODO: - 화면 전환
-        self.navigationController?.pushViewController(GameViewController(), animated: false)
-//
-//        self.navigationController?.popToRootViewController(animated: false)
-//            }
+        if let coordinator = coordinator as? EndCoordinator {
+            coordinator.showNewGameViewController()
+        }
     }
 
 }

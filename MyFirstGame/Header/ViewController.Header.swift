@@ -37,19 +37,23 @@ extension UIViewController: AVAudioPlayerDelegate, Setting {
     func touchUpExitButton() {
         
         // TODO: - 화면전환
-        if self is GameViewController {
-            self.navigationController?.popToRootViewController(animated: false)
-            
-        }else if self is EndViewController {
-            self.navigationController?.popToRootViewController(animated: false)
-//            self.navigationController?.pushViewController(GameViewController(), animated: true)
-            
-        } else{
-            let vc = AlertViewController()
-            vc.modalPresentationStyle = .overCurrentContext
-            present(vc, animated: false)
-        }
         
+        if let startVC = self as? StartViewController {
+            if let coordinate = startVC.coordinator as? StartCoordinator {
+                coordinate.appExit()
+            }
+        }
+        if let gameVC = self as? GameViewController {
+            if let coordinate = gameVC.coordinator as? GameCoordinator {
+                coordinate.popToStartViewController()
+                gameVC.moveState = .leftDie
+            }
+        }
+        if let endVC = self as? EndViewController {
+            if let coordinate = endVC.coordinator as? EndCoordinator {
+                coordinate.popToStartViewController()
+            }
+        }
     }
     @objc
     func touchUpSoundButton() {
@@ -67,10 +71,11 @@ extension UIViewController: AVAudioPlayerDelegate, Setting {
     }
     @objc
     func touchUpSettingButton() {
-        let vc = SettingViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.delegate = self
-        present(vc, animated: false)
+        if let startVC = self as? StartViewController {
+            if let coordinate = startVC.coordinator as? StartCoordinator {
+                coordinate.showSettingViewController()
+            }
+        }
     }
     
 }

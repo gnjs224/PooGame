@@ -14,11 +14,12 @@ class StartViewController: UIViewController {
     let scoreTitleLabel = UILabel()
     let scoreLabel = UILabel()
     var avoiderImageView = UIImageView()
+    var coordinator: Coordinator?
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
+        avoiderImageView = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width / 2 - 20, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 84, width: 40, height: 40))
         
         
         drawFrame(backgroundImage)
@@ -31,10 +32,11 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         BGMManager.shared.playMusic(self)
         scoreLabel.text = "\(UserDefaultManager.shared.maxScore)"
+        print("StartViewWillAppear")
        
     }
     override func viewDidDisappear(_ animated: Bool) {
-        print("didDisapper")
+        print("StartViewdidDisapper")
     }
     func setupTitleLabel() {
         view.addSubview(titleLabel)
@@ -65,7 +67,11 @@ class StartViewController: UIViewController {
     @objc
     func touchUpPlayButtonView(){
         // TODO: - 화면전환
-        navigationController?.pushViewController(GameViewController(), animated: false)
+        if let coordinator = coordinator as? StartCoordinator {
+            coordinator.showGameViewController()
+        }
+        
+//        navigationController?.pushViewController(GameViewController(), animated: false)
     }
     func setupScoreTitleLabel() {
         view.addSubview(scoreTitleLabel)
